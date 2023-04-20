@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.Ocorrencia"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:vm="clr-namespace:SaveItUPX.ViewModel"
+             BackgroundColor="#292929">
+
+    <ContentPage.BindingContext>
+        <vm:OcorrenciaViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout>
+            <forms:AnimationView Margin="0,20,0,0"
+                        x:Name="animationView"
+                        Animation="rain.json"
+                        AnimationSource="AssetOrBundle"
+                        AutoPlay="True"
+                        CacheComposition="True"
+                        EnableMergePathsForKitKatAndAbove="True"
+                        ImageAssetsFolder="Assets/lottie"
+                        IsAnimating="True"
+                        MaxFrame="100"
+                        MaxProgress="100"
+                        MinFrame="0"
+                        MinProgress="0"
+                        RepeatCount="50"
+                        RepeatMode="Restart"
+                        Scale="1"
+                        Speed="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand" 
+                                 HeightRequest="200"/>
+
+            <pancake:PancakeView CornerRadius="25,25,0,0" Margin="0,25,0,0" BackgroundColor="White">
+                <ScrollView>
+                    <StackLayout Margin="20,0,20,0">
+                        <StackLayout  Margin="0,30,0,0">
+                            <Label Text="Escolha uma opção abaixo:" FontSize="19" TextColor="Black" HorizontalOptions="Start"/>
+                            <BoxView HeightRequest="1" BackgroundColor="LightGray" Margin="0,0,0,10"/>
+                            <Picker SelectedItem="{Binding Situacao}"
+                                TextColor="Black"
+                                Title="Selecione"
+                                TitleColor="LightGray">
+                                <Picker.Items>
+                                    <x:String>Alagamento</x:String>
+                                    <x:String>Deslizamento</x:String>
+                                    <x:String>Área de Risco</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,20,0,0">
+                            <Label Text="Rota Alternativa"
+                               TextColor="Black"
+                               FontSize="19"
+                               HorizontalTextAlignment="Start"/>
+
+                            <Editor HeightRequest="150"
+                                HorizontalOptions="Center"
+                                BackgroundColor="LightGray"
+                                TextColor="Black"
+                                WidthRequest="450"
+                                Text="{Binding Rota}"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,20,0,10">
+                            <Button Text="Enviar"
+                                CornerRadius="5"
+                                TextColor="White"
+                                BackgroundColor="#2699FB"
+                                HorizontalOptions="CenterAndExpand"
+                                WidthRequest="300"
+                                Command="{Binding EnviarOcorrencia}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </pancake:PancakeView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

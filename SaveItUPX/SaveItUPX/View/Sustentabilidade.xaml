@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.Sustentabilidade"
+            Title="Sustentabilidade"
+             BackgroundColor="#292929">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="TxtTitulo"
+              FontSize="22"
+              TextColor="LightGray"
+              VerticalTextAlignment="Center"
+              HorizontalTextAlignment="Center"
+                   Text="A ODS consiste em metas para erradicar a pobreza e proteger o meio ambiente melhorando o manejo de recursos naturais em todo o mundo. A nossa aplicação consiste e auxiliará em 2  das 17 ODS estabelecidas atualmente."
+                   TextDecorations="None"
+                  FontAttributes="Bold"
+                  LineBreakMode="CharacterWrap"
+                   Margin="20,10,20,10"/>
+
+                <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center" Spacing="30">
+                    <Image Source="SBE.png" HeightRequest="100"/>
+                    <Image Source="CCS.png" HeightRequest="100"/>
+                </StackLayout>
+
+                <Label x:Name="TxtDescricao"
+              FontSize="17"
+              TextColor="LightGray"
+              VerticalTextAlignment="Center"
+              HorizontalTextAlignment="Center"
+                   Text="Objetivo 3 - Assegurar uma vida saudável e promover o bem-estar para todas e todos, em todas as idades. Até 2030, reduzir substancialmente o número de mortes e doenças por produtos químicos perigosos, contaminação e poluição do ar e água do solo. O nosso projeto contribuirá na redução do número de mortes e prevenção da contaminação por produtos químicos e doenças devido ao cidadão não obter contato com a água contaminada das enchentes onde obtemos águas derivados de esgotos. Objetivo 11 - Tornar as cidades e os assentamentos humanos inclusivos, seguros, resilientes e sustentáveis. Até 2030, aumentar a urbanização inclusiva e sustentável, e as capacidades para o planejamento e gestão de assentamentos humanos participativos, integrados e sustentáveis, em todos os países. Este objetivo 11 consiste em deixar cidades mais seguras, inclusivas e sustentáveis. O nosso projeto auxiliará no mapeamento de zonas mais afetadas por enchentes e alagamentos trazendo dados precisos de onde devemos obter atenção para resolvermos e deixar o local seguro para moradores. E as capacidades para o planejamento e gestão de assentamentos humanos participativos, integrados e sustentáveis, em todos os países. Este objetivo 11 consiste em deixar cidades mais seguras, inclusivas e sustentáveis. O nosso projeto auxiliará no mapeamento de zonas mais afetadas por enchentes e alagamentos trazendo dados precisos de onde devemos obter atenção para resolvermos e deixar o local seguro para moradores."
+                   Margin="20,10,20,10"/>
+
+                <StackLayout>
+                    <Label TextColor="#2699FB" HorizontalTextAlignment="Center" FontSize="15"  Margin="20,0,20,20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span TextDecorations="Underline" Text="Conheça mais sobre os Objetivos de Desenvolvimento Sustentável no Brasil">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

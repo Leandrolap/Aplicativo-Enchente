@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.Perfil"
+             xmlns:vm="clr-namespace:SaveItUPX.ViewModel"
+             Title="Meu Perfil"
+             BackgroundColor="#292929">
+
+    <ContentPage.BindingContext>
+        <vm:PerfilViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid FlexLayout.AlignSelf="Auto">
+        <ScrollView>
+            <StackLayout Margin="15">
+                <Grid>
+                    <Frame Margin="10"
+                           BorderColor="Black"
+                           CornerRadius="90"
+                           HeightRequest="150"
+                           WidthRequest="150"
+                           IsClippedToBounds="True"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                        <Image x:Name="FTPerfil"
+                               Source="{Binding MinhaFoto}" 
+                               Aspect="AspectFill"
+                               Margin="-20"
+                               HeightRequest="100"
+                               WidthRequest="100"/>
+                    </Frame>
+
+                    <ImageButton HeightRequest="40" Source="camera.png" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Margin="0,0,0,3" Command="{Binding BTNPhoto}"/>
+                </Grid>
+
+                <StackLayout>
+                    <Label Text="Nome Completo" TextColor="#2699FB" FontSize="Micro" HorizontalTextAlignment="Start" Margin="0,15,0,0"/>
+                    <Entry x:Name="TxtNome" 
+                           Text="{Binding Nome}"
+                           Keyboard="Text"
+                           TextColor="White"/>
+
+                    <Label Text="Email" TextColor="#2699FB" FontSize="Micro" HorizontalTextAlignment="Start"/>
+                    <Entry x:Name="TxtEmail" 
+                           Text="{Binding Email}" 
+                           Keyboard="Email" 
+                           TextColor="White"/>
+
+                    <Label Text="CPF" TextColor="#2699FB" FontSize="Micro" HorizontalTextAlignment="Start"/>
+                    <Entry x:Name="TxtCPF" 
+                           Keyboard="Telephone" 
+                           Text="{Binding CPF}"
+                           TextColor="White"/>
+
+                    <Label Text="Telefone" TextColor="#2699FB" FontSize="Micro" HorizontalTextAlignment="Start"/>
+                    <Entry x:Name="TxtPhone" 
+                           Keyboard="Telephone" 
+                           Text="{Binding Telefone}"
+                           TextColor="White"/>
+
+                    <Label Text="Cidade" TextColor="#2699FB" FontSize="Micro" HorizontalTextAlignment="Start"/>
+                    <Entry x:Name="TxtCity"
+                           Keyboard="Text"
+                           Text="{Binding Cidade}"
+                           TextColor="White"/>
+
+                    <Label Text="Senha" TextColor="#2699FB" FontSize="Micro" HorizontalTextAlignment="Start"/>
+                    <Entry x:Name="TxtPassword" 
+                           IsPassword="True" 
+                           Text="{Binding Senha}"
+                           TextColor="White"/>
+
+                    <Button x:Name="BtnAttPerfil" 
+                        Text="Atualizar meu perfil" 
+                        FontFamily="MontserratBold"
+                            BackgroundColor="#2699FB"
+                        TextColor="White"
+                        Command="{Binding BTNAtualizar}"
+                            CornerRadius="5"/>
+
+                    <Button x:Name="BtnAttSair" 
+                        Text="Fazer Logout" 
+                        Grid.Row="6" 
+                        FontFamily="MontserratBold" 
+                        BackgroundColor="Transparent" 
+                        TextColor="#2699FB"
+                        Command="{Binding BTNSair}"
+                            VerticalOptions="EndAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

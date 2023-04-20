@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.Popup.ServicosCall"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             NavigationPage.HasNavigationBar ="False"
+             Padding="0">
+
+    <Frame Margin="50" FlexLayout.AlignSelf="Auto" VerticalOptions="CenterAndExpand" CornerRadius="5">
+        <Grid>
+            <StackLayout Spacing="25">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Defesa Civil" FontSize="19" VerticalOptions="EndAndExpand" TextColor="Black"/>
+                    <ImageButton Source="chamada.png" HeightRequest="40" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" VerticalOptions="Center" Clicked="OnClickDC"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Bombeiros" FontSize="19" VerticalOptions="EndAndExpand" TextColor="Black"/>
+                    <ImageButton Source="chamada.png" HeightRequest="40" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" VerticalOptions="Center" Clicked="OnClickBB"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SAMU" FontSize="19" VerticalOptions="EndAndExpand" TextColor="Black"/>
+                    <ImageButton Source="chamada.png" HeightRequest="40" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" VerticalOptions="Center" Clicked="OnClickSAMU"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" BackgroundColor="Black"/>
+
+                <StackLayout Orientation="Horizontal" x:Name="FContato01" IsVisible="false">
+                    <Label x:Name="LblContato01" FontSize="19" VerticalOptions="EndAndExpand"/>
+                    <ImageButton Source="chamada.png" 
+                                 HeightRequest="40" 
+                                 HorizontalOptions="EndAndExpand" 
+                                 BackgroundColor="Transparent" 
+                                 VerticalOptions="Center" 
+                                 Clicked="OnClickContato1"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" x:Name="FContato02" IsVisible="false">
+                    <Label x:Name="LblContato02" FontSize="19" VerticalOptions="EndAndExpand"/>
+                    <ImageButton Source="chamada.png" 
+                                 HeightRequest="40" 
+                                 HorizontalOptions="EndAndExpand" 
+                                 BackgroundColor="Transparent" 
+                                 VerticalOptions="Center" 
+                                 Clicked="OnClickContato2"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" x:Name="FContato03" IsVisible="false">
+                    <Label x:Name="LblContato03" FontSize="19" VerticalOptions="EndAndExpand"/>
+                    <ImageButton Source="chamada.png" 
+                                 HeightRequest="40" 
+                                 HorizontalOptions="EndAndExpand" 
+                                 BackgroundColor="Transparent" 
+                                 VerticalOptions="Center" 
+                                 Clicked="OnClickContato3"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </Frame>
+</popup:PopupPage>

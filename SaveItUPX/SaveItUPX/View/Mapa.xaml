@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.Mapa"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <maps:Map x:Name="map"
+                      VerticalOptions="FillAndExpand"
+                      PinClicked="map_PinClicked"/>
+
+            <pancake:PancakeView x:Name="PDetalhes" CornerRadius="25,25,0,0" BackgroundColor="White" VerticalOptions="End" HeightRequest="150" IsVisible="false">
+                <StackLayout Margin="15">
+                    <Label x:Name="LblNome" Text="Dica de rota:" TextColor="Black" FontSize="Micro"/>
+                    <Label x:Name="LblRota" TextColor="Black" FontSize="Medium"/>
+                </StackLayout>
+            </pancake:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

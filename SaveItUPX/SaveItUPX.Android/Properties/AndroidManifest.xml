@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.saveit" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
+	<application android:label="SaveIt" android:theme="@style/MainTheme" android:icon="@drawable/logo">
+		<meta-data android:name="com.google.android.geo.v2.API_Key" android:value="AIzaSyA3ic93e1aWi-NZO5ALuLc-9Y5j7ns1THY" />
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyA3ic93e1aWi-NZO5ALuLc-9Y5j7ns1THY" />
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>

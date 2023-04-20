@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.Sobre"
+             Title="Sobre o SaveIt"
+             BackgroundColor="White">
+
+    <StackLayout FlexLayout.AlignSelf="Auto" Margin="20">
+        <StackLayout Margin="0,35,0,0" VerticalOptions="CenterAndExpand">
+            <Label Text="Software produzido em parceria com:" FontSize="Small" FontAttributes="Bold" TextColor="#2699FB"/>
+            <StackLayout Orientation="Horizontal" Margin="10,15,20,20">
+                <Image Source="pbh.png" HeightRequest="60"/>
+                <Image Source="DefesaCivil.png" HeightRequest="90" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <Image Source="Bombeiros" HeightRequest="90" Margin="0,50,0,0"/>
+        </StackLayout>
+
+        <StackLayout VerticalOptions="EndAndExpand" Margin="0,0,0,10">
+            <Label TextColor="#2699FB" HorizontalTextAlignment="Center" FontSize="15" VerticalOptions="EndAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span TextDecorations="Underline" Text="Política de Privacidade e Termo de Serviço">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Text="DGLMM Software LTDA" FontSize="Small" HorizontalOptions="Center" TextColor="#2699FB"/>
+            <Label Text="Ver.: 1.5" FontSize="Small" HorizontalOptions="Center" TextColor="#2699FB"/>
+            <Label Text="2022" FontSize="Small" HorizontalOptions="Center" TextColor="#2699FB"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

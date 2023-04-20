@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.Login"
+             xmlns:vm="clr-namespace:SaveItUPX.ViewModel"
+             BackgroundColor="#292929"
+             BackgroundImageSource="Chuva.png">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid FlexLayout.AlignSelf="Auto">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Bem-Vindo"
+                   FontSize="50"
+                   TextColor="White"/>
+
+
+                <BoxView Color="#2699FB" 
+                     Margin="20,0,20,30"
+                     HeightRequest="2"
+                     CornerRadius="5"/>
+            </StackLayout>
+
+            <Frame Margin="25,20,25,10" CornerRadius="10" Padding="10" HeightRequest="320">
+                <StackLayout>
+                    <Entry x:Name="TxtEmail"  
+                       Keyboard="Email" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="E-mail"
+                       TextColor="#292929"
+                       Margin="0,20,0,20"
+                           PlaceholderColor="LightGray"
+                       Text="{Binding Email}"/>
+
+
+                    <Entry IsPassword="True" 
+                       x:Name="TxtPassword" 
+                       ReturnType="Go" 
+                       Placeholder="Senha" 
+                       TextColor="#292929"
+                       FontSize="19"
+                           PlaceholderColor="LightGray"
+                       Text="{Binding Senha}"/>
+
+                    <Button Text="Esqueci minha senha" 
+                    TextColor="Black" 
+                    FontSize="Micro" 
+                    BackgroundColor="Transparent" 
+                    Clicked="OnClickRecuperarSenha"
+                    HorizontalOptions="End"
+                        />
+
+
+                    <Button Text="Acessar" 
+                    VerticalOptions="CenterAndExpand"
+                    HeightRequest="50"
+                    FontSize="Medium"
+                    BackgroundColor="#2699FB"
+                    TextColor="White"
+                    Command="{Binding LoginCommand}"
+                    CornerRadius="5"/>
+
+                    <StackLayout Orientation="Horizontal" Margin="25,10">
+                        <Label Text="Não possui uma conta?"
+                   FontSize="Small"
+                   TextColor="Black"
+                    VerticalOptions="Center"
+                       />
+
+                        <Button Text="cadastre-se" 
+                    TextColor="#2699FB" 
+                    FontSize="Small" 
+                    BackgroundColor="Transparent" 
+                    Clicked="OnClickRegistro"
+                        VerticalOptions="StartAndExpand"
+                       HorizontalOptions="End" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Orientation="Horizontal" Margin="25,10">
+                <Label TextColor="White" HorizontalTextAlignment="Center" FontSize="15">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextDecorations="Underline" Text="Para continuar, você concorda com a Política de Privacidade e o Termo de Serviço">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickTermo}"
+                                                          CommandParameter="https://sites.google.com/view/trocafaciltemos/in%C3%ADcio"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.CasadeApoio"
+             BackgroundColor="#292929"
+             Title="Central de Apoio"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <forms:AnimationView 
+                        x:Name="animationView"
+                        Animation="notfound.json"
+                        AnimationSource="AssetOrBundle"
+                        AutoPlay="True"
+                        CacheComposition="True"
+                        EnableMergePathsForKitKatAndAbove="True"
+                        ImageAssetsFolder="Assets/lottie"
+                        IsAnimating="True"
+                        MaxFrame="100"
+                        MaxProgress="100"
+                        MinFrame="0"
+                        MinProgress="0"
+                        RepeatCount="5"
+                        RepeatMode="Restart"
+                        HeightRequest="250"
+                        Speed="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"/>
+
+        <Label Text="NOVAS INFORMAÇÕES EM BREVE!"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Medium"
+                   TextColor="LightGray"/>
+    </StackLayout>
+</ContentPage>

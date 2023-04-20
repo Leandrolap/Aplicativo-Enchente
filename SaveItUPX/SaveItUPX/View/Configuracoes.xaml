@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.Configuracoes"
+             Title="Configurações"
+             BackgroundColor="#292929">
+
+    <Grid>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="20,25,20,5">
+                <Label Text="Receber notificações" 
+                       TextColor="LightGray" 
+                       FontAttributes="Bold" 
+                       FontSize="Medium" 
+                       HorizontalOptions="StartAndExpand"/>
+
+                <Switch HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Receba alertas sobre a condição do tempo em sua localização." FontSize="Micro" TextColor="LightGray" Margin="20,0,20,5"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="0,40,0,0">
+                <Label Text="Contatos próximos:" 
+                       TextColor="LightGray" 
+                       FontAttributes="Bold" 
+                       FontSize="Large" 
+                       Margin="20,0,20,5"/>
+
+                <ImageButton Source="plus.png" 
+                             HeightRequest="20" 
+                             BackgroundColor="Transparent" 
+                             HorizontalOptions="EndAndExpand" 
+                             Margin="0,0,45,0"
+                             Clicked="OnClickAdd"/>
+            </StackLayout>
+
+            <Frame Margin="20,0,20,0" IsVisible="false" x:Name="AddContato">
+                <StackLayout>
+                    <Entry Placeholder="Contato" x:Name="EntryContato" PlaceholderColor="LightGray" TextColor="Black"/>
+                    <Entry Placeholder="Telefone" Keyboard="Telephone" x:Name="EntryTelefone" PlaceholderColor="LightGray" TextColor="Black"/>
+                    <Button Text="salvar" BackgroundColor="Transparent" TextColor="Black" Clicked="OnClickAddContato"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout x:Name="FContato01" IsVisible="false" Margin="25,0,25,0">
+                <Frame CornerRadius="5" HeightRequest="70" Padding="0">
+                    <StackLayout Orientation="Horizontal" Margin="10">
+                        <StackLayout>
+                            <Label x:Name="LblContato01" FontSize="Medium" TextColor="#2699FB"/>
+                            <Label x:Name="LblTelefone01" FontSize="Micro" TextColor="#292929"/>
+                        </StackLayout>
+                        <ImageButton Source="lixo.png" 
+                                     HeightRequest="25" 
+                                     HorizontalOptions="EndAndExpand" 
+                                     BackgroundColor="Transparent"
+                                     Clicked="OnClickLixo01"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout x:Name="FContato02" IsVisible="false" Margin="25,0,25,0">
+                <Frame CornerRadius="5" HeightRequest="70" Padding="0">
+                    <StackLayout Orientation="Horizontal" Margin="10">
+                        <StackLayout Spacing="0">
+                            <Label x:Name="LblContato02" FontSize="Medium" TextColor="#2699FB"/>
+                            <Label x:Name="LblTelefone02" FontSize="Micro" TextColor="#292929"/>
+                        </StackLayout>
+                        <ImageButton Source="lixo.png" 
+                                     HeightRequest="25" 
+                                     HorizontalOptions="EndAndExpand" 
+                                     BackgroundColor="Transparent"
+                                     Clicked="OnClickLixo02"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout x:Name="FContato03" IsVisible="false" Margin="25,0,25,0">
+                <Frame CornerRadius="5" HeightRequest="70" Padding="0">
+                    <StackLayout Orientation="Horizontal" Margin="10">
+                        <StackLayout Spacing="0">
+                            <Label x:Name="LblContato03" FontSize="Medium" TextColor="#2699FB"/>
+                            <Label x:Name="LblTelefone03" FontSize="Micro" TextColor="#292929"/>
+                        </StackLayout>
+                        <ImageButton Source="lixo.png" 
+                                     HeightRequest="25" 
+                                     HorizontalOptions="EndAndExpand" 
+                                     BackgroundColor="Transparent"
+                                     Clicked="OnClickLixo03"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

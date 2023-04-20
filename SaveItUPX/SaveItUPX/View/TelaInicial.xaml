@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.TelaInicial"
+             xmlns:controls="clr-namespace:SaveItUPX.View"
+       xmlns:page="clr-namespace:SaveItUPX.View"
+             BackgroundColor="#292929">
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader/>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Tela Inicial" Icon="Home.png">
+        <Tab>
+            <ShellContent
+        ContentTemplate="{DataTemplate page:Home}"
+         />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Perfil" Icon="Eu.png">
+        <Tab>
+            <ShellContent
+        ContentTemplate="{DataTemplate page:Perfil}"
+         />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Sustentabilidade" Icon="Recic.png">
+        <Tab>
+            <ShellContent
+        ContentTemplate="{DataTemplate page:Sustentabilidade}"
+         />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configurações" Icon="Config.png">
+        <Tab>
+            <ShellContent
+        ContentTemplate="{DataTemplate page:Configuracoes}"
+         />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Sobre" Icon="Info.png">
+        <Tab>
+            <ShellContent
+        ContentTemplate="{DataTemplate page:Sobre}"
+         />
+        </Tab>
+    </FlyoutItem>
+</Shell>

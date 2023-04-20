@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.CadastrarUsuario"
+             xmlns:vm="clr-namespace:SaveItUPX.ViewModel"
+             BackgroundColor="#292929"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack">
+
+    <ContentPage.BindingContext>
+        <vm:CadastrarUsuarioViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid FlexLayout.AlignSelf="Auto">
+        <ScrollView>
+            <Frame Margin="10,10,10,10" CornerRadius="10" Padding="1" VerticalOptions="CenterAndExpand">
+                <StackLayout Margin="20">
+                    <Entry  
+                       Keyboard="Text" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="Nome Completo"
+                       TextColor="#292929"
+                        PlaceholderColor="LightGray"
+                    Text="{Binding Nome}"/>
+
+                    <Entry  
+                       Keyboard="Email" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="Email"
+                       TextColor="#292929"
+                        PlaceholderColor="LightGray"
+                    Text="{Binding Email}">
+                        <Entry.Behaviors>
+                            <behaviorPack:EmailValidationBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Entry  
+                       Keyboard="Numeric" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="CPF"
+                       TextColor="#292929"
+                        PlaceholderColor="LightGray"
+                    Text="{Binding CPF}">
+
+                        <Entry.Behaviors>
+                            <behaviorPack:CPFValidationBehavior />
+                            <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Entry  
+                       Keyboard="Text" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="Cidade"
+                       TextColor="#292929"
+                        PlaceholderColor="LightGray"
+                    Text="{Binding Cidade}"/>
+                    <Label Text="Obs.: Não adicione acentuação ou ç" FontSize="Micro" FontAttributes="Bold" TextColor="Black"/>
+
+                    <Entry  
+                       Keyboard="Telephone" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="Telefone"
+                       TextColor="#292929"
+                        PlaceholderColor="LightGray"
+                    Text="{Binding Telefone}">
+
+                        <Entry.Behaviors>
+                            <behaviorPack:MaskedBehavior Mask="(XX)XXXXXXXXX"/>
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Label Text="Sexo:"/>
+
+                    <Picker Title="Selecione"
+                            TextColor="Black"
+                            TitleColor="LightGray"
+                    SelectedItem="{Binding Sexo}">
+                        <Picker.Items>
+                            <x:String>Masculino</x:String>
+                            <x:String>Feminino</x:String>
+                            <x:String>Outro</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Entry  
+                       Keyboard="Default" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="Senha"
+                       TextColor="#292929"
+                        PlaceholderColor="LightGray"
+                    Text="{Binding Senha}"
+                    IsPassword="True"/>
+
+                    <Entry  
+                       Keyboard="Default" 
+                       ReturnType="Next" 
+                       FontSize="19"
+                       Placeholder="Confirmar Senha"
+                       TextColor="#292929"
+                        PlaceholderColor="LightGray"
+                    Text="{Binding VSenha}"
+                    IsPassword="True"/>
+
+                    <Button Text="Cadastrar" 
+                    Margin="20"
+                    HeightRequest="50"
+                    FontSize="Medium"
+                    BackgroundColor="#2699FB"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Command="{Binding CadastrarUsuario}"/>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.RecSenha"
+              xmlns:vm="clr-namespace:SaveItUPX.ViewModel"
+             BackgroundColor="#292929">
+
+    <ContentPage.BindingContext>
+        <vm:RecSenhaViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid FlexLayout.AlignSelf="Auto">
+        <Frame Margin="20,10,20,10" CornerRadius="10" Padding="10" VerticalOptions="CenterAndExpand">
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="TxtEmail" 
+                       Placeholder="E-mail" 
+                       Keyboard="Email" 
+                       TextColor="Black" 
+                       FontSize="19"
+                       Text="{Binding Email}"
+                           Grid.Column="0"
+                           PlaceholderColor="LightGray"
+                           />
+
+                    <ImageButton BackgroundColor="Transparent"
+                            HorizontalOptions="End"
+                    Command="{Binding EnviarCodigo}"
+                            Source="email.png"
+                            Padding="0"
+                            Grid.Column="1"
+                                 VerticalOptions="End"
+                                />
+                </Grid>
+
+
+                <Label Text="Obs: Verifique se o email não caiu na caixa de span" 
+               TextColor="Black" 
+               FontSize="Micro"
+                  HorizontalTextAlignment="Center"/>
+
+                <Entry x:Name="TxtCodigo" 
+                       Placeholder="Código" 
+                       Keyboard="Default" 
+                       TextColor="Black" 
+                       PlaceholderColor="LightGray"
+                       FontSize="19"
+                       Text="{Binding Codigo}"/>
+
+                <Label Text="Insira o código enviado por e-mail" 
+               TextColor="Black" 
+               FontSize="Micro"
+                  HorizontalTextAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+                <Entry x:Name="TxtNSenha" 
+                       Placeholder="Insira a nova senha" 
+                       Keyboard="Default"
+                       IsPassword="True"
+                       TextColor="Black" 
+                       PlaceholderColor="LightGray"
+                       FontSize="19"
+                       Text="{Binding NSenha}"/>
+
+                <Button x:Name="BtnEnviarSenha" 
+                Text="Redefinir senha" 
+                Command="{Binding EnviarSenha}"
+                    CornerRadius="10"
+                    Margin="20"
+                    HeightRequest="50"
+                    BackgroundColor="#2699FB"
+                    TextColor="White"/>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

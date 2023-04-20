@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveItUPX.View.PrevisaodoTempo"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="#292929">
+
+    <Grid>
+        <Grid>
+            <Image Source="{Binding Icon}"
+                   HeightRequest="100"
+                   HorizontalOptions="End"
+                   VerticalOptions="Start"
+                   Margin="0,20,5,0"
+                   Opacity="0.7"/>
+        </Grid>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="0" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Margin="0">
+                <Label x:Name="tempLabel" 
+                   TextColor="LightGray"  
+                   Text="{Binding Temperature}"
+                   FontSize="170"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                       Padding="0"/>
+
+                <Label Text="º"
+                       TextColor="LightGray"
+                       FontSize="95"
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Start"
+                       Margin="0,35,0,0"/>
+            </StackLayout>
+
+            <pancake:PancakeView HeightRequest="250" CornerRadius="35,35,0,0" VerticalOptions="EndAndExpand" BackgroundColor="White">
+                <Grid>
+                    <Label Text="{Binding Description}" 
+                           TextColor="#292929"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Large"
+                           VerticalOptions="Start"
+                           Margin="0,20,0,0"/>
+
+                    <StackLayout Margin="0,20,0,30" Orientation="Horizontal" Spacing="50" HorizontalOptions="Center">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="vento.png"
+                                   HeightRequest="50"/>
+                            <Label Text="Ventos"
+                                   TextColor="#292929"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Label x:Name="windLabel" 
+                                   Text="{Binding Wind}" 
+                                   TextColor="#292929"
+                                   HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="umidade.png"
+                                   HeightRequest="50"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="Umidade"
+                                   TextColor="#292929"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Label x:Name="humidityLabel" 
+                                   Text="{Binding Humidity}" 
+                                   TextColor="#292929"
+                                   HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Label Text="{Binding Title}" 
+                           TextColor="#2699FB"
+                           HorizontalOptions="Center"
+                           VerticalOptions="EndAndExpand"
+                           FontSize="19"
+                           Margin="10"/>
+                </Grid>
+            </pancake:PancakeView>
+        </StackLayout>
+    </Grid>
+</ContentPage>
